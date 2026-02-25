@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}	<!-- load static -->
+<head>
+  <link rel="stylesheet" href="styles.css"> <!-- include css file -->
+</head>
+<body>
+ 
+    <div class="topnav"> <!-- add class attribute -->
+      <a class="active" href="index.html">Home</a>
+      <a href="list_books.html">List Books</a>
+      <a href="aboutus.html">About</a>
+    </div>
+ 
+    <h1 style="color: blue;">This is heading 1 (Library)</h1> <!-- add inline css -->
+    <p style="color: white;background-color: black;">This is a paragraph text </p> <!-- add inline css -->
+
+  <title>My First Index HTML Page</title>
+  <meta name="keywords" content="Books, recent, Learning, library">
+  <meta name="description" content="Books website">
+  <meta name="author" content="author name">
+  <link rel="icon" href="qu-icon.png">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="{% static 'styles.css' %}"> <!-- static template tag -->
+</head>
+<body>
+      <div class="topnav"> 
+      <a class="active" href="{% url "books.index" %}">Home</a> <!-- URL template tag -->
+      <a href="{% url "books.list_books" %}">List Books</a> <!-- URL template tag -->
+      <a href="{% url "books.aboutus" %}">About</a> <!-- URL template tag -->
+    </div>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="list_books.html">List Books</a>
+      <a href="aboutus.html">About</a>
+    </div>
+    <h1>This is heading 1 (Library)</h1>
+    <p>This is a paragraph text </p>
+    <a href="https://www.w3schools.com/html/default.asp">Learn more about HTML</a>
+    <hr>
+    <!-- This is a comment in HTML, not render in the bowser -->
+    <h2>This is heading 2</h2> 
+    <p>This is some other text. <br> with newline <br> and another line</p>
+    <hr>
+    
+    <h2>This is heading 2</h2>
+    <p>This is some other text.</p>
+</body>
+</html> 
+
