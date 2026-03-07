@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5 Tables</title>
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+</head>
+
+<body>
+
+
+<div class="t1-container">
+    <h3>Table 1: Table<br>of Fruits and<br>Their Prices</h3>
+
+    <table class="t1" border="1" cellspacing="5" cellpadding="5">
+        <tr>
+            <th>Fruit</th>
+            <th>Price</th>
+        </tr>
+        <tr>
+            <td>Apple</td>
+            <td>$0.25</td>
+        </tr>
+        <tr>
+            <td>Orange</td>
+            <td>$0.50</td>
+        </tr>
+        <tr>
+            <td>Banana</td>
+            <td>$1.00</td>
+        </tr>
+        <tr>
+            <td>Pineapple</td>
+            <td>$2.00</td>
+        </tr>
+        <tr>
+            <th>Total</th>
+            <th>$3.75</th>
+        </tr>
+    </table>
+</div>
+
+<br><br>
+
+
+<h3 style="text-align:center;">Table 2: A more complex sample table</h3>
+
+<table class="t2" border="1" cellspacing="0" cellpadding="10">
+  <tr>
+    <!-- Image spans TWO rows -->
+    <td rowspan="2" class="img-cell">
+      <img src="{% static 'desert.jpg' %}" alt="Desert" class="camel-img">
+    </td>
+
+    <!-- Title spans 4 columns -->
+    <th colspan="4" class="big-title">
+      Camelid comparison <br>
+      Approximate as of 6/2011</span>
+    </th>
+  </tr>
+
+  <tr>
+    <th># of humps</th>
+    <th>Indigenous region</th>
+    <th>Spits?</th>
+    <th>Produces wool?</th>
+  </tr>
+
+  <tr>
+    <th>Dromedary</th>
+    <td>1</td>
+    <td>Arabian Peninsula</td>
+    <td>Yes</td>
+    <td>Yes</td>
+  </tr>
+
+  <tr>
+    <th>Camels (bactrian)</th>
+    <td>2</td>
+    <td>Africa/Asia</td>
+    <td>Yes</td>
+    <td>Yes</td>
+  </tr>
+
+  <tr>
+    <th>Llamas</th>
+    <td>1</td>
+    <td>Andes Mountains</td>
+    <td>Yes</td>
+    <td>Yes</td>
+  </tr>
+</table>
+
+</body>
+</html>

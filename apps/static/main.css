@@ -1,0 +1,128 @@
+
+
+.link1,
+.link2,
+.link3{
+    display:block;
+    padding:30px;
+    text-align:center;
+}
+
+
+
+.link1{
+    background-color:#9fd3a8;
+}
+
+.link1 a{
+    color:red;
+    font-size:20px;
+}
+
+
+
+.link2{
+    background-color:#5a5a5a;
+}
+
+.link2 a{
+    color:gold;
+    font-size:20px;
+}
+
+
+
+.link3{
+    background-color:black;
+}
+
+.link3 a{
+    color:white;
+    font-size:20px;
+}
+
+
+
+a:visited{
+    opacity:0.8;
+}
+
+a:hover{
+    text-decoration:underline;
+}
+
+a:active{
+    color:blue;
+}
+
+.format-title{
+    color:green;
+    background-color:#d8d5b5;
+    padding:15px;
+}
+
+.listing-title{
+    background-color:#6c9fa2;
+    color:white;
+    padding:15px;
+    font-size:36px;
+}
+
+
+.t1-container{
+    width: 100%;
+    text-align: center;
+}
+
+.t1-container h3{
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.t1{
+  margin: 0 auto;
+  border: 2px solid #000;
+  border-collapse: separate;   /* NOT collapse */
+  border-spacing: 3px;         /* same effect as cellspacing */
+}
+
+.t1 th, .t1 td{
+  border: 2px solid #000;
+
+  text-align: center;
+  font-size: 20px;
+}
+
+.t2{
+  width: 90%;
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+
+.t2 th, .t2 td{
+  border: 1px solid #555;
+  text-align: center;
+  font-size: 18px;
+}
+
+.img-cell{
+  width: 40%;
+}
+
+.camel-img{
+  width: 90%;
+  height: auto;
+  display: block;
+  margin: auto;
+}
+
+.big-title{
+  height: 130px;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.small-title{
+  font-size: 18px;
+  font-weight: normal;
+}

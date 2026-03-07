@@ -10,3 +10,37 @@
     To write to <a href="mailto:email@domain.com">our store</a>, click the link and your default email client will open an email message and address it to us.
   </p>
 {% endblock content %}
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+  <title>About Us</title>
+  <meta charset="UTF-8">
+  <link rel="icon" href="{% static 'qu-icon.png' %}">
+  <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+
+<body>
+
+<div class="topnav">
+  <a href="{% url 'books.index' %}">Home</a>
+  <a href="{% url 'books.list_books' %}">List Books</a>
+  <a class="active" href="{% url 'books.aboutus' %}">About</a>
+</div>
+
+<h1>About us</h1>
+
+<p>
+This is a paragraph text This is a paragraph text
+This is a paragraph text This is a paragraph text
+</p>
+
+<p>
+To write to
+<a href="mailto:email@domain.com">our store</a>,
+click the link and your default email client will open an email message.
+</p>
+
+</body>
+</html> 

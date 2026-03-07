@@ -17,3 +17,45 @@
   <h2>This is heading 2</h2>
   <p>This is some other text.</p>
 {% endblock content %}
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+  <title>My First Index HTML Page</title>
+  <meta name="keywords" content="Books, recent, Learning, library">
+  <meta name="description" content="Books website">
+  <meta name="author" content="author name">
+  <link rel="icon" href="{% static 'qu-icon.png' %}">
+  <meta charset="UTF-8">
+
+  <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+
+<body>
+
+<div class="topnav">
+  <a class="active" href="{% url 'books.index' %}">Home</a>
+  <a href="{% url 'books.list_books' %}">List Books</a>
+  <a href="{% url 'books.aboutus' %}">About</a>
+</div>
+
+<h1 style="color: blue;">This is heading 1 (Library)</h1>
+<p style="color: white; background-color: black;">This is a paragraph text</p>
+
+<a href="https://www.w3schools.com/html/default.asp">
+  Click Here to learn more about HTML & CSS
+</a>
+
+<hr>
+
+<h2>This is heading 2</h2>
+<p>This is some other text. <br/> with newline <br/> and another line</p>
+
+<hr>
+
+<h2>This is heading 2</h2>
+<p>This is some other text.</p>
+
+</body>
+</html>

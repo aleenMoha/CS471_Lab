@@ -28,3 +28,53 @@
   <img src="{% static 'book3.jpg' %}" alt="Book3 img desc" width="200" height="200">
   <hr>
 {% endblock content %}
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+  <title>List of Books</title>
+  <meta charset="UTF-8">
+  <link rel="icon" href="{% static 'qu-icon.png' %}">
+
+  <style>
+    h1 { color: green; }
+    h2 { color: lightskyblue; }
+    p  { font-family: verdana; font-size: 20px; }
+  </style>
+
+  <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+
+<body>
+
+<div class="topnav">
+  <a href="{% url 'books.index' %}">Home</a>
+  <a class="active" href="{% url 'books.list_books' %}">List Books</a>
+  <a href="{% url 'books.aboutus' %}">About</a>
+</div>
+
+<h1>List of Books</h1>
+
+<a href="{% url 'books.view_one_book' 1 %}">
+  <h2>Internet & World Wide Web How to Program</h2>
+</a>
+
+<a href="{% url 'books.view_one_book' 1 %}">
+  <img src="{% static 'book1.jpg' %}" width="200" height="200">
+</a>
+
+<hr>
+
+<h2>2) C++ How to Program</h2>
+<img src="{% static 'book2.jpg' %}" width="200" height="200">
+
+<hr>
+
+<h2>3) Another Book</h2>
+<img src="{% static 'book3.jpg' %}" width="200" height="200">
+
+<hr>
+
+</body>
+</html> 

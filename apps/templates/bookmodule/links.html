@@ -1,0 +1,36 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block title %}HTML5 Links{% endblock %}
+
+{% block header %}
+{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{% static 'main.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="link1">
+    <a href="https://www.qu.edu.sa" target="_blank">
+        Go to QU website (open a new tab)
+    </a>
+</div>
+
+<div class="link2">
+    <a href="https://www.qu.edu.sa">
+        Go to QU website (open in the same page/tab)
+    </a>
+</div>
+
+<div class="link3">
+    <a href="https://www.qu.edu.sa">
+        Go to QU website (open in the same page/tab)
+    </a>
+</div>
+
+{% endblock %}
+
+{% block footer %}
+  {% endblock footer %}
