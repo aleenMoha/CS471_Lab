@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 import os
 from pathlib import Path
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).parent.parent # root folder where manage.py
 TEMPLATE_DIR = os.path.join(BASE_DIR, "apps" , "templates")
 
 
@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'apps.bookmodule',
     'apps.usermodule',
+    'apps.alnmod',
+    
 
 ]
 
@@ -123,3 +125,7 @@ STATICFILES_DIRS = [( os.path.join(BASE_DIR, "apps/static"))]
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')   #production

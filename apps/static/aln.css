@@ -1,0 +1,16 @@
+.aln {
+    color : purple;
+    font-size: 200px;
+    font-family: 'Trebuchet MS';
+}
+body {
+background-color: lightred;
+}
+h1 {
+color: white;
+text-align: center;
+}
+p {
+font-family: verdana;
+font-size: 20px;
+}
