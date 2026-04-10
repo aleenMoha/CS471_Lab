@@ -1,19 +1,9 @@
+from .models import Book
 from django.shortcuts import render
+
 def index(request): 
     name = request.GET.get("name") or "world!"
     return render(request, "bookmodule/index.html" , {"name": name})
-
-
-# from django.http import HttpResponse
-# def index(request):
-#     name = request.GET.get("name") or "world!"  #add this line
-#     return HttpResponse("Hello, "+name) #replace the word “world!” with the variable name
-
-
-
-
-# # def index(request):
-# #     return HttpResponse("Hello, world!")
 
 def index2(request, val1 = 0):   #add the view function (index2)
     return HttpResponse("value1 = "+str(val1))
@@ -83,3 +73,20 @@ def __getBooksList():
     book2 = {'id':56788765,'title':'Reversing: Secrets of Reverse Engineering', 'author':'E. Eilam'}
     book3 = {'id':43211234, 'title':'The Hundred-Page Machine Learning Book', 'author':'Andriy Burkov'}
     return [book1, book2, book3]
+
+def construct(request):
+    mybook = Book(title = 'Continuous Delivery', author = 'J.Humble and D. Farley', edition = 1).save
+    mybook = Book.objects.create(title = 'Continuous Delivery', author = 'J.Humble and D. Farley', edition = 1).save
+
+def simple_query(request):
+    construct(request)
+    mybooks=Book.objects.filter(title__icontains='and') # <- multiple objects
+    return render(request, 'bookmodule/bookList.html', {'books':mybooks})
+
+def complex_query(request):
+    mybooks=books=Book.objects.filter(author__isnull = False).filter(title__icontains='and')[:10]
+    if len(mybooks)>=1:
+        return render(request, 'bookmodule/bookList.html', {'books':mybooks})
+    else:
+        return render(request, 'bookmodule/index.html')
+

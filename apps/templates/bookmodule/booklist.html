@@ -15,6 +15,11 @@
                 </li>
                 <hr>
             {% endfor %}
+            {% for obj in books %}
+                ID: {{obj.id}}, Title: {{obj.title}}
+                <hr>
+            {% endfor %}
+
         </ul>
     {% else %}
         <p>No books found.</p>

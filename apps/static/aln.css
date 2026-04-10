@@ -1,7 +1,8 @@
 .aln {
     color : purple;
-    font-size: 200px;
+    font-size: 10px;
     font-family: 'Trebuchet MS';
+    top: 20px;
 }
 body {
 background-color: lightred;

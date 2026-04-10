@@ -2,36 +2,188 @@
 {% load static %}
 <html>
 	<head>
-		<title> Aeen World </title>
-		<h1>Aleen, rzip, studying purpose</h1>
-        <link href="/static/aln.css" rel="stylesheet">
-        <style>
-            .aln {
-                color : purple;
-                font-size: 200px;
-                font-family: 'Trebuchet MS';
-            }
+		<style>
+			.g{
+				color: pink;
+				background-color: grey;
 
-            .hero{
-                color:red;
-                font-family: arial;
-            }
-        </style>
+				width: 200px;
+				height: 300px;
+				justify-content: center;
+				align-items: center;
+				font-size: 40px;
+				font-family: arial;
+
+				margin: 15px;
+				padding: 20px;
+				border: 20px solid skyblue;
+
+				text-align: center;
+				display:flex;
+				position:static;
+				float:right;
+
+				opacity: 0.7;
+				box-shadow: 10px 10px 20px grey;
+
+				cursor:grab;
+			}
+			a:link {
+			color: red;
+			}
+			a:visited {
+			color: gray;
+			}
+			a:hover {
+			color: black;
+			}
+			a:active {
+			color: blue;
+			}
+			.h:link, .h:visited{
+				border-radius: 25px;  /* make it rounded box */
+				background: #F5F5F5;   /* or: rgb(245,245,245) */
+				padding: 10px;  /* make surrounding area for text */
+				text-align: center;  /* center the text */
+				font-weight: bold;  /* make the text bold */
+				border: 3px solid black;  /* border of the box */
+				text-decoration: none;  
+			}
+			td, th {
+			padding: 8px; 
+			border-bottom: 1px solid;
+			}
+			table {
+			border-collapse: collapse; 
+			width: 100%;
+			}
+			tr:nth-child(even) {
+			background-color: #F5F5F5;
+			}
+			tr:hover {
+			background-color: lightgray;
+			}
+			
+						
+		</style>
+		<link href="{% static 'aln.css' %}" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		
 	</head>
 	<body>
-		<h2 style="color: pink; font-size:100px; font-family:'Courier New';"> Aleen</h2>
-		<h3 class="aln">Girl</h3>
-		<h4>Saudi</h4>
-		<p> try to achive a lot of goals</p>
+		<p> my passion is &#8734 </p>
+		<i class="fa fa-gift fa-2lg"></i>
+		<h1 class = 'g'>
+			Aleen
+		</h1>
+		<img src="{% static 'codewall.jpg' %}" width="100" height="100">
 		<br>
-		<p>bye</p>
-		<section>
-		<p style="color: blue; font-size: 400px;">pease</p>
-		</section>
-		<div>
-		<p class="hero">hello</p> 
-		</div>
-		<!--blah blah blah-->
-		
+		<a href="https://myqu.qu.edu.sa" target="_blank" style="font-size: 40px; display:block;">google</a>
+		<br>
+		<a href="https://www.google.com" target="_blank" class="h">google</a>
+		<br>
+		<p class ="aln"> This text has <b>subtext</b> using b tag</p>
+		<p>
+ <b> bold </b> <br>
+ <strong> bold diff semanitic </strong> <br>
+ <i> italic </i><br>
+ <em> italic diff semanitic</em><br>
+<del> strikthrough </del> <br>
+<ins> underlne </ins> <br>
+x<sub>subscript</sub> <br>
+x<sup> superscript </sup> <br>
+<small>small</small> <br>
+<mark> highlight </mark>
+</p>
+<br><br><br>
+<p>Some fruits:</p>
+<ul>
+<li>Grape</li>
+<li>Citrus</li>
+<ul>
+<li>Orange</li>
+<ol>
+<li>Enhance immunity</li>
+<ul>
+<li>Because of Vitamin C, producing white blood cells is increased</li>
+</ul>
+<li>Boost brain function</li>
+</ol>
+<li>Lemon</li>
+</ul>
+<li>Apple</li>
+<ol>
+<li>Prevent inflammation</li>
+<li>Improve digestive health</li>
+</ol>
+<li>Banana</li>
+</ul>
+<br><br>
+<p>some fruits</p>
+<ul>
+	<li> grape</li>
+	<li>citrus</li>
+		<ul>
+			<li>orange</li>
+				<ol>
+					<li>enhance</li>
+						<ul><li>vitamin c </li></ul>
+					<li> boost</li>
+				</ol>
+			<li>lemon</li>
+		</ul>
+	<li>apple</li>
+		<ol>
+			<li> inflm </li>
+			<li> digestive </li>
+		</ol>
+	<li>banana</li>
+
+</ul>
+
+<table>
+<caption>Table 1: order details of customer 1234567</caption>
+<tr>
+<th>Item</th>
+<th>Quantity</th>
+<th>Unit Price</th>
+<th>Total Price</th>
+</tr>
+<tr>
+<td>Orange</td>
+<td>15</td>
+<td>2</td>
+<td>30</td>
+</tr>
+<tr>
+<td>Lemon</td>
+<td>6</td>
+<td>1.50</td>
+<td>9</td>
+</tr>
+<tr>
+<td>Apple</td>
+<td>15</td>
+<td>2.5</td>
+<td>37.5</td>
+</tr>
+</table>
+
+<table>
+<caption> <b> Aleen </b> <ins>Legand</ins> <i>student</i>
+<tr>
+<th>Courses</th>
+<th>Mid</th>
+<th>final</th>
+<th>grade</th>
+</tr>
+
+<tr>
+<td> CS471</td>
+<td> 50 </td>
+
+</table>
+
 	</body>
 </html>
+<!--   -->
