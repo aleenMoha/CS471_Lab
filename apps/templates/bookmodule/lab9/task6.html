@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab 9 - Task 6</title>
+</head>
+<body>
+    <h1>Task 6: Filtered Books Count for Each Publisher</h1>
+
+    <table border="1" cellpadding="8">
+        <tr>
+            <th>Publisher</th>
+            <th>Filtered Books Count</th>
+        </tr>
+        {% for publisher in publishers %}
+        <tr>
+            <td>{{ publisher.name }}</td>
+            <td>{{ publisher.filtered_books_count }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

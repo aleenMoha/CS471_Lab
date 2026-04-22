@@ -130,3 +130,72 @@ def lab8_task5(request):
         min_price=Min('price')
     )
     return render(request, 'bookmodule/lab8/task5.html', {'stats': stats})
+
+
+from django.shortcuts import render
+from django.db.models import (
+    Sum, Count, Avg, Min, Max, F, FloatField, ExpressionWrapper, Q
+)
+from .models import Book, Publisher
+
+def lab9_task1(request):
+    total_stock = Book.objects.aggregate(total=Sum('quantity'))['total'] or 1
+
+    books = Book.objects.annotate(
+        availability_percentage=ExpressionWrapper(
+            (F('quantity') * 100.0) / total_stock,
+            output_field=FloatField()
+        )
+    )
+
+    context = {
+        'books': books,
+        'total_stock': total_stock
+    }
+    return render(request, 'bookmodule/lab9/task1.html', context)
+def lab9_task2(request):
+    publishers = Publisher.objects.annotate(
+        total_book_stock=Sum('book__quantity')
+    )
+
+    context = {'publishers': publishers}
+    return render(request, 'bookmodule/lab9/task2.html', context)
+
+def lab9_task3(request):
+    publishers = Publisher.objects.annotate(
+        oldest_book_date=Min('book__pubdate')
+    )
+
+    context = {'publishers': publishers}
+    return render(request, 'bookmodule/lab9/task3.html', context)
+
+def lab9_task4(request):
+    publishers = Publisher.objects.annotate(
+        avg_price=Avg('book__price'),
+        min_price=Min('book__price'),
+        max_price=Max('book__price')
+    )
+
+    context = {'publishers': publishers}
+    return render(request, 'bookmodule/lab9/task4.html', context)
+
+def lab9_task5(request):
+    publishers = Publisher.objects.annotate(
+        high_rated_books_count=Count('book', filter=Q(book__rating__gte=4))
+    )
+
+    context = {'publishers': publishers}
+    return render(request, 'bookmodule/lab9/task5.html', context)
+
+def lab9_task6(request):
+    publishers = Publisher.objects.annotate(
+        filtered_books_count=Count(
+            'book',
+            filter=Q(book__price__gt=50, book__quantity__lt=5, book__quantity__gte=1)
+        )
+    )
+
+    context = {'publishers': publishers}
+    return render(request, 'bookmodule/lab9/task6.html', context)
+
+
