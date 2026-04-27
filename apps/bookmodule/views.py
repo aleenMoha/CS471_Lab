@@ -136,12 +136,12 @@ from django.shortcuts import render
 from django.db.models import (
     Sum, Count, Avg, Min, Max, F, FloatField, ExpressionWrapper, Q
 )
-from .models import Book, Publisher
+from .models import Book2, Publisher
 
 def lab9_task1(request):
-    total_stock = Book.objects.aggregate(total=Sum('quantity'))['total'] or 1
+    total_stock = Book2.objects.aggregate(total=Sum('quantity'))['total'] or 1
 
-    books = Book.objects.annotate(
+    books = Book2.objects.annotate(
         availability_percentage=ExpressionWrapper(
             (F('quantity') * 100.0) / total_stock,
             output_field=FloatField()
@@ -153,27 +153,30 @@ def lab9_task1(request):
         'total_stock': total_stock
     }
     return render(request, 'bookmodule/lab9/task1.html', context)
+
 def lab9_task2(request):
     publishers = Publisher.objects.annotate(
-        total_book_stock=Sum('book__quantity')
+        total_book_stock=Sum('book2__quantity')
     )
 
     context = {'publishers': publishers}
     return render(request, 'bookmodule/lab9/task2.html', context)
 
+
 def lab9_task3(request):
     publishers = Publisher.objects.annotate(
-        oldest_book_date=Min('book__pubdate')
+        oldest_book_date=Min('book2__pubdate')
     )
 
-    context = {'publishers': publishers}
-    return render(request, 'bookmodule/lab9/task3.html', context)
+    return render(request, 'bookmodule/lab9/task3.html', {
+        'publishers': publishers
+    })
 
 def lab9_task4(request):
     publishers = Publisher.objects.annotate(
-        avg_price=Avg('book__price'),
-        min_price=Min('book__price'),
-        max_price=Max('book__price')
+        avg_price=Avg('book2__price'),
+        min_price=Min('book2__price'),
+        max_price=Max('book2__price')
     )
 
     context = {'publishers': publishers}
@@ -181,7 +184,7 @@ def lab9_task4(request):
 
 def lab9_task5(request):
     publishers = Publisher.objects.annotate(
-        high_rated_books_count=Count('book', filter=Q(book__rating__gte=4))
+        high_rated_books_count=Count('book2', filter=Q(book2__rating__gte=4))
     )
 
     context = {'publishers': publishers}
@@ -190,8 +193,8 @@ def lab9_task5(request):
 def lab9_task6(request):
     publishers = Publisher.objects.annotate(
         filtered_books_count=Count(
-            'book',
-            filter=Q(book__price__gt=50, book__quantity__lt=5, book__quantity__gte=1)
+            'book2',
+            filter=Q(book2__price__gt=50, book2__quantity__lt=5, book2__quantity__gte=1)
         )
     )
 
